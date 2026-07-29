@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#4f46e5">
+  <title>我的工作台</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- 顶部 -->
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <div class="date" id="dateText">--</div>
+          <div class="greet" id="greetText">你好</div>
+        </div>
+        <div class="countdown">
+          <div class="cd-num" id="cdNum">--</div>
+          <div class="cd-label">27秋招·已备战</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 今日概览 -->
+    <section class="card overview">
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-pct" id="ringPct">0%</div>
+          <div class="ring-sub">今日完成</div>
+        </div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini"><div class="mini-num" id="miniTodo">0/0</div><div class="mini-label">待办</div></div>
+        <div class="mini"><div class="mini-num" id="miniApply">0</div><div class="mini-label">今日投递</div></div>
+        <div class="mini"><div class="mini-num" id="miniSport">--</div><div class="mini-label">运动</div></div>
+      </div>
+    </section>
+
+    <!-- 今日 To-Do -->
+    <section class="card">
+      <div class="card-head">
+        <h2>今日 To-Do</h2>
+        <span class="card-sub" id="todoSub">0 / 0</span>
+      </div>
+      <div class="todo-add">
+        <input id="todoInput" type="text" placeholder="添加一个今日任务…" maxlength="60">
+        <button id="todoAdd">＋</button>
+      </div>
+      <div class="todo-progress"><div class="todo-progress-bar" id="todoBar"></div></div>
+      <ul class="todo-list" id="todoList"></ul>
+      <div class="empty" id="todoEmpty">还没有任务，先加一个吧</div>
+    </section>
+
+    <!-- 秋招投递进度 -->
+    <section class="card">
+      <div class="card-head">
+        <h2>秋招投递进度</h2>
+        <div class="head-actions">
+          <span class="badge feishu on" id="feishuBadge">腾讯文档已同步</span>
+          <button class="sync-btn" id="syncDocBtn" title="向 WorkBuddy 请求同步文档">⟳同步</button>
+        </div>
+      </div>
+      <div class="apply-stats" id="applyStats"></div>
+      <ul class="apply-list" id="applyList"></ul>
+      <div class="empty" id="applyEmpty">还没有投递记录</div>
+      <div class="feishu-tip on" id="feishuTip">
+        数据来源：腾讯文档《2027秋招fighting》快照<br>
+        点击右侧状态可直接修改（本地即时生效、看板同步刷新）<br>
+        写回腾讯文档需跟我说「同步投递」
+      </div>
+    </section>
+
+    <!-- 投递数据看板 -->
+    <section class="card">
+      <div class="card-head"><h2>投递数据看板</h2><span class="card-sub" id="boardTotal">共 0 条</span></div>
+      <div class="board-row">
+        <div class="board-box"><canvas id="pieChart" height="180"></canvas></div>
+        <div class="board-box"><canvas id="barChart" height="180"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 运动打卡 -->
+    <section class="card">
+      <div class="card-head">
+        <h2>今日运动</h2>
+        <span class="card-sub" id="sportStreak">连续 0 天</span>
+      </div>
+      <div class="sport-toggles">
+        <div class="sport-toggle" data-type="aerobic">
+          <div class="sport-icon">🏃</div>
+          <div class="sport-name">有氧</div>
+          <div class="sport-state" id="aerobicState">未完成</div>
+        </div>
+        <div class="sport-toggle" data-type="anaerobic">
+          <div class="sport-icon">🏋️</div>
+          <div class="sport-name">无氧</div>
+          <div class="sport-state" id="anaerobicState">未完成</div>
+        </div>
+      </div>
+      <div class="week-sport" id="weekSport"></div>
+    </section>
+
+    <!-- 今日心情 + 月历 -->
+    <section class="card">
+      <div class="card-head">
+        <h2>今日心情</h2>
+        <span class="card-sub" id="moodStreak">连续打卡 0 天</span>
+      </div>
+      <div class="mood-grid">
+        <div class="mood-item" data-mood="激动"><span class="mood-emoji">🤩</span><span>激动</span></div>
+        <div class="mood-item" data-mood="平静"><span class="mood-emoji">😊</span><span>平静</span></div>
+        <div class="mood-item" data-mood="压力"><span class="mood-emoji">😣</span><span>压力</span></div>
+        <div class="mood-item" data-mood="难过"><span class="mood-emoji">😢</span><span>难过</span></div>
+      </div>
+      <div class="mood-cal-wrap">
+        <div class="cal-head">
+          <span id="calTitle">--</span>
+          <div class="cal-nav">
+            <button id="calPrev" class="cal-btn">‹</button>
+            <button id="calNext" class="cal-btn">›</button>
+          </div>
+        </div>
+        <div class="calendar" id="calendar"></div>
+        <div class="cal-legend" id="calLegend"></div>
+      </div>
+    </section>
+
+    <!-- 每日反思 -->
+    <section class="card">
+      <div class="card-head"><h2>今日复盘</h2></div>
+      <textarea id="reflectInput" placeholder="今天做了什么、收获、明天要改进的…" maxlength="200"></textarea>
+      <div class="reflect-foot"><span id="reflectDate">--</span><span id="reflectCount">0/200</span></div>
+    </section>
+
+    <footer class="footer">个人工作台 · 本地存储 · WorkBuddy 搭建</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
