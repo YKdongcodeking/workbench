@@ -86,6 +86,20 @@
       </div>
     </section>
 
+    <!-- 新开秋招List -->
+    <section class="card">
+      <div class="card-head">
+        <h2>新开秋招 List</h2>
+        <span class="card-sub" id="jobsDate">--</span>
+      </div>
+      <div class="jobs-list" id="jobsList"></div>
+      <div class="empty" id="jobsEmpty">暂无最新招聘信息</div>
+      <div class="feishu-tip on">
+        数据来源：腾讯文档《招聘信息汇总表》<br>
+        展示最新日期新开的校招岗位，每小时自动同步
+      </div>
+    </section>
+
     <!-- 运动打卡 -->
     <section class="card">
       <div class="card-head">
@@ -137,6 +151,36 @@
       <div class="card-head"><h2>今日复盘</h2></div>
       <textarea id="reflectInput" placeholder="今天做了什么、收获、明天要改进的…" maxlength="200"></textarea>
       <div class="reflect-foot"><span id="reflectDate">--</span><span id="reflectCount">0/200</span></div>
+    </section>
+
+    <!-- 周记 -->
+    <section class="card">
+      <div class="card-head">
+        <h2>本周周记</h2>
+        <span class="card-sub" id="weekSub">--</span>
+      </div>
+      <div class="week-reminder" id="weekReminder" style="display:none">📝 本周填写日（周五/六），记得写周记</div>
+      <div class="week-inputs">
+        <div class="week-field">
+          <label>1. 投递进度（本周新增投递）</label>
+          <textarea id="wkApply" placeholder="如：本周投递5家，含腾讯、字节..." maxlength="300"></textarea>
+        </div>
+        <div class="week-field">
+          <label>2. 面试/投递复盘</label>
+          <textarea id="wkReview" placeholder="如：腾讯笔试偏算法，字节二面问到..." maxlength="500"></textarea>
+        </div>
+        <div class="week-field">
+          <label>3. 本周经验总结</label>
+          <textarea id="wkSummary" placeholder="如：加强八股文复习，项目细节要更熟..." maxlength="500"></textarea>
+        </div>
+      </div>
+      <button class="week-gen" id="wkGen">生成职业化周记</button>
+      <div class="week-output" id="wkOutput"></div>
+      <div class="week-arch-head">
+        <h3>周记库</h3>
+        <button class="wk-toggle-arch" id="wkToggleArch">展开/收起</button>
+      </div>
+      <ul class="week-arch" id="wkArch"></ul>
     </section>
 
     <footer class="footer">个人工作台 · 本地存储 · WorkBuddy 搭建</footer>

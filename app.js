@@ -13,7 +13,7 @@ function load(){
   try{return JSON.parse(localStorage.getItem(STORE_KEY))||fresh()}catch(e){return fresh()}
 }
 function fresh(){
-  return {todos:[],applications:[],workouts:{},mood:{},reflect:{},meta:{created:Date.now()}}
+  return {todos:[],applications:[],workouts:{},mood:{},reflect:{},weeks:{},jobs:[],meta:{created:Date.now()}}
 }
 function save(){localStorage.setItem(STORE_KEY,JSON.stringify(db))}
 
@@ -24,10 +24,12 @@ function renderAll(){
   renderTodo();
   renderApply();
   renderBoard();
+  renderJobs();
   renderSport();
   renderMood();
   renderCalendar();
   renderReflect();
+  renderWeek();
 }
 
 function renderHeader(){
@@ -264,7 +266,139 @@ rInp.addEventListener('input',()=>{
   document.getElementById('reflectCount').textContent=rInp.value.length+'/200';
 });
 
+// ===== 新开秋招List（数据源：腾讯文档《招聘信息汇总表》快照 jobs.json）=====
+async function syncJobsFromCloud(){
+  try{
+    const r=await fetch('./jobs.json',{cache:'no-store'});
+    if(!r.ok)throw 0;
+    const data=await r.json();
+    db.jobs=data.jobs||[];
+    db.jobsMeta={latestDate:data.latestDate,count:data.count,syncedAt:data.syncedAt};
+    renderJobs();
+  }catch(e){}
+}
+function renderJobs(){
+  const list=document.getElementById('jobsList');
+  const empty=document.getElementById('jobsEmpty');
+  const dateEl=document.getElementById('jobsDate');
+  const jobs=db.jobs||[];
+  if(!jobs.length){list.innerHTML='';empty.style.display='block';dateEl.textContent='--';return}
+  empty.style.display='none';
+  const meta=db.jobsMeta||{};
+  dateEl.textContent=meta.latestDate?('最新 '+meta.latestDate+' · '+jobs.length+'条'):(jobs.length+'条');
+  list.innerHTML='';
+  jobs.forEach(j=>{
+    const li=document.createElement('div');
+    li.className='job-item';
+    const cat=j.category||'';
+    const catTag=cat?'<span class="job-cat">'+cat+'</span>':'';
+    const co=j.link?('<a class="job-co" href="'+j.link+'" target="_blank"></a>'):'<div class="job-co"></div>';
+    li.innerHTML=co+'<div class="job-main"></div>'+catTag;
+    li.querySelector('.job-co').textContent=j.company||'—';
+    li.querySelector('.job-main').innerHTML=
+      '<div class="job-pos">'+(j.position||'—')+'</div>'+
+      '<div class="job-meta">'+(j.city||'多地')+' · '+(j.edu||'')+' · '+(j.session||'')+'</div>'+
+      (j.deadline&&j.deadline!=='/'?'<div class="job-dl">截止 '+j.deadline+'</div>':'');
+    list.appendChild(li);
+  });
+}
+
+// ===== 周记 =====
+function weekKey(d){
+  const dt=new Date(d||Date.now());
+  const day=dt.getDay()||7;
+  dt.setDate(dt.getDate()-day+1);
+  return dateKey(dt);
+}
+function weekLabel(k){
+  const [y,m,d]=k.split('-').map(Number);
+  const m1=new Date(y,m-1,d);
+  const m7=new Date(y,m-1,d+6);
+  return (m1.getMonth()+1)+'.'+m1.getDate()+'-'+(m7.getMonth()+1)+'.'+m7.getDate();
+}
+function renderWeek(){
+  const k=weekKey();
+  const wk=db.weeks[k]||{apply:'',review:'',summary:'',report:''};
+  db.weeks[k]=wk;
+  document.getElementById('wkApply').value=wk.apply||'';
+  document.getElementById('wkReview').value=wk.review||'';
+  document.getElementById('wkSummary').value=wk.summary||'';
+  document.getElementById('weekSub').textContent='第'+weekLabel(k)+'周';
+  const out=document.getElementById('wkOutput');
+  out.innerHTML=wk.report?wk.report.replace(/\n/g,'<br>'):'';
+  const dow=new Date().getDay();
+  document.getElementById('weekReminder').style.display=(dow===5||dow===6)?'block':'none';
+  const arch=document.getElementById('wkArch');
+  arch.innerHTML='';
+  const keys=Object.keys(db.weeks).sort().reverse();
+  let hasAny=false;
+  keys.forEach(wkk=>{
+    const w=db.weeks[wkk];
+    if(!w||!w.report)return;
+    hasAny=true;
+    const li=document.createElement('li');
+    li.className='wk-arch-item';
+    li.innerHTML='<span class="wk-arch-date">第'+weekLabel(wkk)+'周</span><span class="wk-arch-preview">'+(w.report.slice(0,28).replace(/\n/g,' '))+'…</span>';
+    li.onclick=()=>{showArchWeek(wkk)};
+    arch.appendChild(li);
+  });
+  if(!hasAny)arch.innerHTML='<li class="empty">还没有生成的周记</li>';
+}
+function showArchWeek(k){
+  const w=db.weeks[k];if(!w||!w.report)return;
+  const out=document.getElementById('wkOutput');
+  out.innerHTML='<div class="wk-arch-title">第'+weekLabel(k)+'周周记</div>'+w.report.replace(/\n/g,'<br>');
+  out.scrollIntoView({behavior:'smooth'});
+}
+['wkApply','wkReview','wkSummary'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    const k=weekKey();
+    const w=db.weeks[k]||(db.weeks[k]={apply:'',review:'',summary:'',report:''});
+    w[id.slice(2).toLowerCase()]=document.getElementById(id).value;
+    save();
+  });
+});
+document.getElementById('wkGen').onclick=()=>{
+  const k=weekKey();
+  const w=db.weeks[k]||{};
+  w.apply=document.getElementById('wkApply').value.trim();
+  w.review=document.getElementById('wkReview').value.trim();
+  w.summary=document.getElementById('wkSummary').value.trim();
+  // 计算本周投递核心指标
+  const [yy,mm,dd]=k.split('-').map(Number);
+  const m1=new Date(yy,mm-1,dd);
+  const m7=new Date(yy,mm-1,dd+6);
+  const weekApps=db.applications.filter(a=>{
+    if(!a.date)return false;
+    const [y2,m2,d2]=a.date.split('-').map(Number);
+    const dt=new Date(y2,m2-1,d2);
+    return dt>=m1&&dt<=m7;
+  });
+  const wkCount=weekApps.length;
+  const total=db.applications.length;
+  const stat={};APPLY_STATUSES.forEach(s=>stat[s]=0);
+  weekApps.forEach(a=>{if(stat[a.status]!==undefined)stat[a.status]++});
+  const hl=(n,label)=>'<b class="hl">'+n+'</b> '+label;
+  let report='【第'+weekLabel(k)+'周 · 秋招周报】\n\n';
+  report+='一、投递进度\n';
+  report+='本周新增投递 '+hl(wkCount,'家')+'，累计投递 '+hl(total,'家')+'。\n';
+  const dist=APPLY_STATUSES.filter(s=>stat[s]>0).map(s=>hl(stat[s],s)).join('、');
+  report+='本周状态分布：'+(dist||'暂无')+'。\n';
+  report+='复盘要点：'+(w.apply||'（未填写）')+'\n\n';
+  report+='二、面试/投递复盘\n'+(w.review||'（未填写）')+'\n\n';
+  report+='三、本周经验总结\n'+(w.summary||'（未填写）')+'\n';
+  w.report=report;save();
+  document.getElementById('wkOutput').innerHTML=report.replace(/\n/g,'<br>');
+};
+let wkArchOpen=false;
+document.getElementById('wkToggleArch').onclick=()=>{
+  wkArchOpen=!wkArchOpen;
+  document.getElementById('wkArch').style.display=wkArchOpen?'block':'none';
+};
+document.getElementById('wkArch').style.display='none';
+
 renderAll();
+syncJobsFromCloud();
 if(!db.applications.length)syncApplyFromCloud();
 document.getElementById('syncDocBtn').onclick=()=>{
   alert('数据已设置每小时整点自动从腾讯文档同步。\n如需立即刷新，请在 WorkBuddy 对我说「同步投递」，约10秒生效。\n\n你在工作台里改的状态保存在本地，不会丢失。');
