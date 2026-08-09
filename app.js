@@ -107,7 +107,7 @@ function addTodo(){
 }
 
 // ===== 投递（数据源：腾讯文档《2027秋招fighting》快照 data.json）=====
-const APPLY_STATUSES=['意向投递','已投递','约一面','约二面','已offer','再接再厉'];
+const APPLY_STATUSES=['意向投递','已投递','笔试','ai面','约一面','约二面','已offer','再接再厉'];
 const applyToday=a=>a.date===todayKey();
 // 拉取腾讯文档快照覆盖投递记录
 async function syncApplyFromCloud(){
@@ -160,7 +160,7 @@ function cycleApplyStatus(a){
 
 // ===== 投递数据看板 =====
 let pieChart=null,barChart=null;
-const STATUS_COLORS={'意向投递':'#a9adc0','已投递':'#4f46e5','约一面':'#ea580c','约二面':'#7c3aed','已offer':'#16a34a','再接再厉':'#e11d48'};
+const STATUS_COLORS={'意向投递':'#a9adc0','已投递':'#4f46e5','笔试':'#f59e0b','ai面':'#06b6d4','约一面':'#ea580c','约二面':'#7c3aed','已offer':'#16a34a','再接再厉':'#e11d48'};
 function renderBoard(){
   if(typeof Chart==='undefined'){setTimeout(renderBoard,300);return}
   const counts={};APPLY_STATUSES.forEach(s=>counts[s]=0);
