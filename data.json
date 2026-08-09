@@ -1,7 +1,7 @@
 {
   "source": "腾讯文档·2027秋招fighting",
   "docUrl": "https://docs.qq.com/smartsheet/DZkN4eVVwWkRZek93",
-  "syncedAt": "2026-08-09T11:24:40",
+  "syncedAt": "2026-08-09T12:22:43",
   "records": [
     {
       "company": "京东",
@@ -274,6 +274,14 @@
       "date": "2026-07-27",
       "note": "已投递2/2",
       "link": "https://app.mokahr.com/campus-recruitment/aftershokzhr/36940#/candidateHome/applications"
+    },
+    {
+      "company": "111",
+      "position": "",
+      "status": "已offer",
+      "date": "",
+      "note": "",
+      "link": ""
     }
   ]
 }
