@@ -13,7 +13,7 @@ DOC_URL = "https://docs.qq.com/smartsheet/DZkN4eVVwWkRZek93"
 
 def run_tdoc(args):
     cmd = [PYTHON, "tencentdocs.py"] + args
-    r = subprocess.run(cmd, cwd=TDOC_DIR, capture_output=True, text=True, encoding='utf-8')
+    r = subprocess.run(cmd, cwd=TDOC_DIR, capture_output=True, text=True, encoding='utf-8', errors='replace')
     return r.stdout, r.stderr
 
 def tdoc_call(tool, params):
@@ -48,7 +48,7 @@ def todate(v):
 
 def main():
     out, _ = run_tdoc(["tdoc_init"])
-    if 'READY' not in out:
+    if not out or 'READY' not in out:
         print("TOKEN_NOT_READY skip")
         return
     data = tdoc_call("smartsheet.list_records", {"file_id": FILE_ID, "sheet_id": SHEET_ID})

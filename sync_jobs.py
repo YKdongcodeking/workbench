@@ -17,7 +17,7 @@ FIELDS = ["date","company","type","industry","position","city",
 
 def run_tdoc(args):
     cmd = [PYTHON, "tencentdocs.py"] + args
-    r = subprocess.run(cmd, cwd=TDOC_DIR, capture_output=True, text=True, encoding='utf-8')
+    r = subprocess.run(cmd, cwd=TDOC_DIR, capture_output=True, text=True, encoding='utf-8', errors='replace')
     return r.stdout, r.stderr
 
 def tdoc_call(tool, params):
@@ -46,7 +46,7 @@ def parse_date(s):
 def main():
     # 1. 检查票据
     out, _ = run_tdoc(["tdoc_init"])
-    if 'READY' not in out:
+    if not out or 'READY' not in out:
         print("TOKEN_NOT_READY skip")
         return
     # 2. 读前 150 行（最新日期记录在表头之后、按降序排列）
