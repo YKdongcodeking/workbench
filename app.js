@@ -119,7 +119,10 @@ async function syncApplyFromCloud(){
       company:x.company||'—',position:x.position||'—',status:x.status||'意向投递',
       date:x.date||'',note:x.note||'',link:x.link||''
     }));
+    db.applySyncAt=data.syncedAt||'';
+    save();
     renderApply();renderBoard();renderOverview();
+    const b=document.getElementById('feishuBadge');if(b){b.textContent='已同步';b.classList.add('on')}
   }catch(e){
     const b=document.getElementById('feishuBadge');if(b){b.textContent='同步失败';b.classList.remove('on')}
   }
@@ -399,7 +402,13 @@ document.getElementById('wkArch').style.display='none';
 
 renderAll();
 syncJobsFromCloud();
-if(!db.applications.length)syncApplyFromCloud();
+syncApplyFromCloud();
 document.getElementById('syncDocBtn').onclick=()=>{
-  alert('数据已设置每小时整点自动从腾讯文档同步。\n如需立即刷新，请在 WorkBuddy 对我说「同步投递」，约10秒生效。\n\n你在工作台里改的状态保存在本地，不会丢失。');
+  const badge=document.getElementById('feishuBadge');
+  if(badge)badge.textContent='同步中...';
+  Promise.all([syncApplyFromCloud(),syncJobsFromCloud()]).then(()=>{
+    alert('✅ 同步完成！\n\n投递数据已从腾讯文档《2027秋招fighting》更新。\n招聘信息已从《招聘信息汇总表》更新。');
+  }).catch(()=>{
+    alert('同步失败，请稍后重试。\n\n提示：每小时整点会自动同步，或对我说「同步投递」触发。');
+  });
 };
