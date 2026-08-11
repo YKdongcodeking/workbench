@@ -1,7 +1,7 @@
 {
   "source": "腾讯文档·2027秋招fighting",
   "docUrl": "https://docs.qq.com/smartsheet/DZkN4eVVwWkRZek93",
-  "syncedAt": "2026-08-09T21:56:31",
+  "syncedAt": "2026-08-11T18:14:21",
   "records": [
     {
       "company": "京东",
@@ -14,7 +14,7 @@
     {
       "company": "字节跳动",
       "position": "大客户销售（互动影视） - 商业化",
-      "status": "笔试",
+      "status": "测评",
       "date": "2026-08-04",
       "note": "已投递1/2",
       "link": "https://jobs.bytedance.com/experienced/position/application"
@@ -22,10 +22,34 @@
     {
       "company": "Babycare",
       "position": "2027校招-品牌策划管培生",
-      "status": "笔试",
+      "status": "测评",
       "date": "2026-08-06",
       "note": "已投递1/3",
       "link": "https://babycare.zhiye.com/personal/deliveryRecord"
+    },
+    {
+      "company": "小米",
+      "position": "整合营销专员",
+      "status": "测评",
+      "date": "2026-08-11",
+      "note": "已投递2/2",
+      "link": "https://xiaomi.jobs.f.mioffice.cn/campus/position/application"
+    },
+    {
+      "company": "小米",
+      "position": "整合营销专员-汽车",
+      "status": "测评",
+      "date": "2026-08-11",
+      "note": "已投递2/2",
+      "link": "https://xiaomi.jobs.f.mioffice.cn/campus/position/application"
+    },
+    {
+      "company": "舜宇集团",
+      "position": "市场开发-深圳",
+      "status": "测评",
+      "date": "2026-08-11",
+      "note": "已投递1/？",
+      "link": "https://app.mokahr.com/campus-recruitment/sunnyoptical/45602?locale=zh-CN#/"
     },
     {
       "company": "影石创新",
@@ -76,14 +100,6 @@
       "link": "https://apply.careers.dji.com/candidate/applications/deliver-query/dji"
     },
     {
-      "company": "百度",
-      "position": "北京-市场营销(J100739)",
-      "status": "已投递",
-      "date": "2026-07-30",
-      "note": "已投递1/1，北京-内容策划(J100791) 这个岗位也不错",
-      "link": "https://talent.baidu.com/jobs/center"
-    },
-    {
       "company": "创维",
       "position": "海外营销管培生",
       "status": "已投递",
@@ -124,12 +140,12 @@
       "link": "https://jobs.hisense.com/personal/deliveryRecord"
     },
     {
-      "company": "阿里巴巴",
-      "position": "整合营销专员（淘宝闪购）",
+      "company": "海信",
+      "position": "海外品牌营销",
       "status": "已投递",
       "date": "2026-08-06",
-      "note": "已投递1/1",
-      "link": "https://campus-talent.alibaba.com/personal/applications"
+      "note": "已投递1/？",
+      "link": "https://jobs.hisense.com/7/jobs"
     },
     {
       "company": "去哪儿旅行",
@@ -148,12 +164,76 @@
       "link": "https://bambulab.jobs.feishu.cn/campus/position/application"
     },
     {
-      "company": "海信",
-      "position": "海外品牌营销",
+      "company": "阿里巴巴",
+      "position": "千问办公市场营销专员",
       "status": "已投递",
-      "date": "2026-08-06",
-      "note": "尽快投递",
-      "link": "https://jobs.hisense.com/7/jobs"
+      "date": "2026-08-10",
+      "note": "已投递1/？",
+      "link": "https://阿里巴巴校园招聘"
+    },
+    {
+      "company": "阿里巴巴",
+      "position": "虎鲸文娱整合营销",
+      "status": "已投递",
+      "date": "2026-08-10",
+      "note": "已投递1/？",
+      "link": "https://阿里巴巴校园招聘"
+    },
+    {
+      "company": "ZURU",
+      "position": "新品研发项目管理管培生",
+      "status": "已投递",
+      "date": "2026-08-11",
+      "note": "已投递1/?",
+      "link": "https://wecruit.hotjob.cn/SU69fd5a0e1f17c372512fba62/pb/account.html#/myDeliver"
+    },
+    {
+      "company": "vivo",
+      "position": "产品营销经理-27届秋招",
+      "status": "已投递",
+      "date": "2026-08-11",
+      "note": "已投递1/1",
+      "link": "https://hr-campus.vivo.com/personal/deliveryRecord"
+    },
+    {
+      "company": "得物",
+      "position": "【27届校招】项目运营-数码",
+      "status": "已投递",
+      "date": "2026-08-11",
+      "note": "已投递2/2",
+      "link": "https://campus.dewu.com/578078/position/application"
+    },
+    {
+      "company": "得物",
+      "position": "【27届校招】商家运营-摄影摄像",
+      "status": "已投递",
+      "date": "2026-08-11",
+      "note": "已投递2/2",
+      "link": "https://campus.dewu.com/578078/position/application"
+    },
+    {
+      "company": "睿创微纳",
+      "position": "国内",
+      "status": "是否投递？",
+      "date": "",
+      "note": "",
+      "link": "https://raytrontek1.zhiye.com/campus/jobs"
+    },
+    {
+      "company": "基恩士",
+      "position": "销售工程师",
+      "status": "是否投递？",
+      "date": "",
+      "note": "",
+      "link": "https://www.keyence.com.cn/ss/careers/"
+    },
+    {
+      "company": "深信服",
+      "position": "深信服27届-客户经理（专业不设限）",
+      "status": "是否投递？",
+      "date": "",
+      "note": "",
+      "link": "https://hr.sangfor.com/campucompon/Delivery/4537"
     },
     {
       "company": "TCL",
@@ -165,7 +245,15 @@
     },
     {
       "company": "亿滋",
-      "position": "注意一下何时开秋招 想投递",
+      "position": "",
+      "status": "意向投递",
+      "date": "",
+      "note": "还未开放，注意跟进",
+      "link": ""
+    },
+    {
+      "company": "迈瑞医疗",
+      "position": "",
       "status": "意向投递",
       "date": "",
       "note": "还未开放，注意跟进",
@@ -194,14 +282,6 @@
       "date": "",
       "note": "0813开放，注意跟进",
       "link": ""
-    },
-    {
-      "company": "vivo",
-      "position": "",
-      "status": "意向投递",
-      "date": "",
-      "note": "还未开放，注意跟进",
-      "link": "https://vivo招聘"
     },
     {
       "company": "蔚来",
@@ -276,12 +356,20 @@
       "link": "https://app.mokahr.com/campus-recruitment/aftershokzhr/36940#/candidateHome/applications"
     },
     {
-      "company": "111",
-      "position": "",
-      "status": "已offer",
-      "date": "",
-      "note": "",
-      "link": ""
+      "company": "百度",
+      "position": "北京-市场营销(J100739)",
+      "status": "再接再厉",
+      "date": "2026-07-30",
+      "note": "已投递1/1，北京-内容策划(J100791) 这个岗位也不错",
+      "link": "https://talent.baidu.com/jobs/center"
+    },
+    {
+      "company": "阿里巴巴",
+      "position": "整合营销专员（淘宝闪购）",
+      "status": "再接再厉",
+      "date": "2026-08-06",
+      "note": "已投递1/1",
+      "link": "https://campus-talent.alibaba.com/personal/applications"
     }
   ]
 }
