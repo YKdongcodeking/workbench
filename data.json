@@ -1,7 +1,7 @@
 {
   "source": "腾讯文档·2027秋招fighting",
   "docUrl": "https://docs.qq.com/smartsheet/DZkN4eVVwWkRZek93",
-  "syncedAt": "2026-08-11T23:57:43",
+  "syncedAt": "2026-08-17T16:52:00",
   "records": [
     {
       "company": "京东",
@@ -68,30 +68,6 @@
       "link": "https://arashivision.jobs.feishu.cn/campus/position"
     },
     {
-      "company": "小鹏汽车",
-      "position": "商务运营培训生（机器人生态方向）",
-      "status": "已投递",
-      "date": "2026-07-26",
-      "note": "共可投递3，已投递1",
-      "link": "https://xiaopeng.jobs.feishu.cn/campus/position/application"
-    },
-    {
-      "company": "网易互娱",
-      "position": "渠道发行管培生",
-      "status": "已投递",
-      "date": "2026-07-27",
-      "note": "已投递2/2",
-      "link": "https://campus.game.163.com/app/personal/apply"
-    },
-    {
-      "company": "网易互娱",
-      "position": "品牌管理培训生",
-      "status": "已投递",
-      "date": "2026-07-27",
-      "note": "已投递2/2",
-      "link": "https://campus.game.163.com/app/personal/apply"
-    },
-    {
       "company": "DJI",
       "position": "市场培训生（品牌传播-深圳）",
       "status": "已投递",
@@ -106,14 +82,6 @@
       "date": "2026-08-04",
       "note": "已投递1/2",
       "link": "https://skyworth.hotjob.cn/SU668b8b251c240e2e76ea71d8/pb/account.html#/myDeliver"
-    },
-    {
-      "company": "海尔集团",
-      "position": "GMTP-海外市场领航者计划",
-      "status": "已投递",
-      "date": "2026-08-04",
-      "note": "已投递1/3",
-      "link": "https://海尔招聘-海尔官方招聘网站"
     },
     {
       "company": "Bilibili",
@@ -132,22 +100,6 @@
       "link": "https://talent.lenovo.com.cn/account/apply"
     },
     {
-      "company": "海信",
-      "position": "信动力M计划-海外品牌营销(J43404)",
-      "status": "已投递",
-      "date": "2026-08-06",
-      "note": "已投递1/1",
-      "link": "https://jobs.hisense.com/personal/deliveryRecord"
-    },
-    {
-      "company": "海信",
-      "position": "海外品牌营销",
-      "status": "已投递",
-      "date": "2026-08-06",
-      "note": "已投递1/？",
-      "link": "https://jobs.hisense.com/7/jobs"
-    },
-    {
       "company": "去哪儿旅行",
       "position": "AI产品运营",
       "status": "已投递",
@@ -160,16 +112,8 @@
       "position": "海外市场营销(产品营销方向)",
       "status": "已投递",
       "date": "2026-08-08",
-      "note": "已投递1/？",
+      "note": "已投递2/2",
       "link": "https://bambulab.jobs.feishu.cn/campus/position/application"
-    },
-    {
-      "company": "阿里巴巴",
-      "position": "千问办公市场营销专员",
-      "status": "已投递",
-      "date": "2026-08-10",
-      "note": "已投递1/？",
-      "link": "https://阿里巴巴校园招聘"
     },
     {
       "company": "阿里巴巴",
@@ -212,6 +156,78 @@
       "link": "https://campus.dewu.com/578078/position/application"
     },
     {
+      "company": "腾讯",
+      "position": "市场营销",
+      "status": "已投递",
+      "date": "2026-08-12",
+      "note": "已投递1/1",
+      "link": "https://join.qq.com/progress.html"
+    },
+    {
+      "company": "理想汽车",
+      "position": "营销活动专员-上海",
+      "status": "已投递",
+      "date": "2026-08-12",
+      "note": "已投递1/2",
+      "link": "https://www.lixiang.com/employ/detail/20001.html?jobCode=undefined&fromJob=1"
+    },
+    {
+      "company": "顺丰",
+      "position": "集团管培生",
+      "status": "已投递",
+      "date": "2026-08-13",
+      "note": "提前批已投递1/?",
+      "link": "https://campus.sf-express.com/#/personalCenter?activeTab=2"
+    },
+    {
+      "company": "滴滴",
+      "position": "27届秋招-市场营销顾问（成都）",
+      "status": "已投递",
+      "date": "2026-08-13",
+      "note": "已投递1/？",
+      "link": "https://campus.didiglobal.com/campus_apply/didiglobal/96064#/candidateHome/applications"
+    },
+    {
+      "company": "巨人网络",
+      "position": "营销策划（27届秋招）",
+      "status": "已投递",
+      "date": "2026-08-13",
+      "note": "已投递1/？",
+      "link": "https://app.mokahr.com/campus-recruitment/ztgame/92438?locale=zh-CN&sessionid=#/candidateHome/applications"
+    },
+    {
+      "company": "OBSBOT寻影",
+      "position": "国内市场管培生",
+      "status": "已投递",
+      "date": "2026-08-17",
+      "note": "已投递1/1",
+      "link": "https://n8r2cr07gk.jobs.feishu.cn/920634/position/application"
+    },
+    {
+      "company": "拓竹科技",
+      "position": "国内市场营销 - 新人群营销方向",
+      "status": "已投递",
+      "date": "2026-08-17",
+      "note": "已投递2/2",
+      "link": "https://bambulab.jobs.feishu.cn/campus/position/application"
+    },
+    {
+      "company": "腾讯音乐娱乐",
+      "position": "品牌传播",
+      "status": "已投递",
+      "date": "2026-08-17",
+      "note": "已投递1/1",
+      "link": "https://join.tencentmusic.com/deliver"
+    },
+    {
+      "company": "货拉拉",
+      "position": "全球拓展管培生",
+      "status": "已投递",
+      "date": "2026-08-17",
+      "note": "已投递1/？",
+      "link": "https://app.mokahr.com/campus-recruitment/huolalahr/98660?sourceToken=581e23d9a2ab8b93e0238899be60d80d#/candidateHome/applications"
+    },
+    {
       "company": "睿创微纳",
       "position": "国内",
       "status": "是否投递？",
@@ -232,7 +248,7 @@
       "position": "深信服27届-客户经理（专业不设限）",
       "status": "是否投递？",
       "date": "",
-      "note": "",
+      "note": "下午投递",
       "link": "https://hr.sangfor.com/campucompon/Delivery/4537"
     },
     {
@@ -280,7 +296,7 @@
       "position": "",
       "status": "意向投递",
       "date": "",
-      "note": "0813开放，注意跟进",
+      "note": "0813开放，注意跟进，正式批次20号开始",
       "link": ""
     },
     {
@@ -290,6 +306,14 @@
       "date": "",
       "note": "还未开放，注意跟进",
       "link": "https://蔚来校招"
+    },
+    {
+      "company": "追觅",
+      "position": "",
+      "status": "意向投递",
+      "date": "",
+      "note": "",
+      "link": ""
     },
     {
       "company": "石头科技",
@@ -314,6 +338,70 @@
       "date": "",
       "note": "目前只开了技术提前批，注意跟进",
       "link": "https://transsion.zhiye.com/4/jobs?memory={}&silence=1&sessionid="
+    },
+    {
+      "company": "小鹏汽车",
+      "position": "商务运营培训生（机器人生态方向）",
+      "status": "再接再厉",
+      "date": "2026-07-26",
+      "note": "共可投递3，已投递1",
+      "link": "https://xiaopeng.jobs.feishu.cn/campus/position/application"
+    },
+    {
+      "company": "网易互娱",
+      "position": "渠道发行管培生",
+      "status": "再接再厉",
+      "date": "2026-07-27",
+      "note": "已投递2/2",
+      "link": "https://campus.game.163.com/app/personal/apply"
+    },
+    {
+      "company": "网易互娱",
+      "position": "品牌管理培训生",
+      "status": "再接再厉",
+      "date": "2026-07-27",
+      "note": "已投递2/2",
+      "link": "https://campus.game.163.com/app/personal/apply"
+    },
+    {
+      "company": "凡岛",
+      "position": "",
+      "status": "再接再厉",
+      "date": "2026-08-13",
+      "note": "已投递2/2",
+      "link": "https://job.fandow.com/personalCenter?type=record"
+    },
+    {
+      "company": "海尔集团",
+      "position": "GMTP-海外市场领航者计划",
+      "status": "再接再厉",
+      "date": "2026-08-04",
+      "note": "已投递1/3",
+      "link": "https://海尔招聘-海尔官方招聘网站"
+    },
+    {
+      "company": "海信",
+      "position": "信动力M计划-海外品牌营销(J43404)",
+      "status": "再接再厉",
+      "date": "2026-08-06",
+      "note": "已投递1/1",
+      "link": "https://jobs.hisense.com/personal/deliveryRecord"
+    },
+    {
+      "company": "莉莉丝游戏",
+      "position": "【2027秋招】全球发行策略管培生",
+      "status": "再接再厉",
+      "date": "2026-08-13",
+      "note": "已投递1/2",
+      "link": "https://lilithgames.jobs.feishu.cn/campus/position/application"
+    },
+    {
+      "company": "阿里巴巴",
+      "position": "千问办公市场营销专员",
+      "status": "再接再厉",
+      "date": "2026-08-10",
+      "note": "已投递1/？",
+      "link": "https://阿里巴巴校园招聘"
     },
     {
       "company": "oppo",
